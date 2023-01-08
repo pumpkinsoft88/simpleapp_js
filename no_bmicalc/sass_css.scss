@@ -1,0 +1,208 @@
+    // Variables
+
+// Fonts
+$base-font-size: 16px;
+$line-height: 1.5 * $base-font-size; // = 24px
+
+@font-face {
+    font-family: "Amiko";
+    src: url("Amiko-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Amiko";
+    src: url("Amiko-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+// Colors
+$rgba-primary-0: rgba(170, 57, 57,1);
+$rgba-primary-1: rgba(255,170,170,1);
+$rgba-primary-2: rgba(212,106,106,1);
+$rgba-primary-3: rgba(128, 21, 21,1);
+$rgba-primary-4: rgba( 85,  0,  0,1);
+
+
+    // General rules
+
+html {
+    font-size: $base-font-size;
+    background-color: $rgba-primary-1;
+    background: border-box linear-gradient(180deg, $rgba-primary-1, $rgba-primary-2, $rgba-primary-0) 100% 100%;
+}
+
+
+.b-page {
+    box-sizing: border-box;
+    font-size: $base-font-size;
+    font-family: "Amiko", sans-serif;
+    width: 100%;
+    height: fit-content;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.b-title {
+    font-size: 2.25 * $base-font-size;
+    font-weight: 700;
+    letter-spacing: -2px;
+    color: $rgba-primary-3;
+    text-align: center;
+    margin-top: 2 * $line-height;
+    margin-bottom: $line-height;
+}
+
+.b-form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.3 * $base-font-size;
+    line-height: $line-height;
+    background-color: $rgba-primary-0;
+    margin: 0 auto $line-height;
+    max-width: 450px;
+    height: fit-content;
+    padding: 2.25rem;
+    border-radius: 1rem;
+    filter: drop-shadow(0 0 0.3rem $rgba-primary-4);
+}
+
+.b-weight,
+.b-height {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex: 2;
+    width: 100%;
+}
+
+.b-weight__input,
+.b-height__input {
+    flex: 2;
+    background-color: $rgba-primary-2;
+    color: $rgba-primary-4;
+    caret-color: $rgba-primary-4;
+    font-size: inherit;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: 0.296rem inset $rgba-primary-0;
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.b-weight__label,
+.b-height__label {
+    flex: 1;
+    display: block;
+    text-align: left;
+    color: $rgba-primary-1;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: none;
+    width: 100%;
+}
+
+.b-btn {
+    flex: 1;
+    font-size: 1.5 *$base-font-size;
+    background-color: $rgba-primary-3;
+    color: $rgba-primary-1;
+    height: 2*$line-height;
+    border-radius: 1rem;
+    border: none;
+    padding: 1rem 0.5rem;
+    margin: 1rem 0;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+}
+
+// Pseudo-classes
+
+.b-weight__input:focus,
+.b-height__input:focus {
+    outline: none;
+    background-color: $rgba-primary-1;
+}
+
+.b-weight__input:hover,
+.b-height__input:hover,
+.b-btn:hover,
+.b-btn:focus {
+    filter: drop-shadow(0 0 0.444rem $rgba-primary-4);
+    outline: none;
+}
+
+.b-btn:active {
+    background-color: $rgba-primary-1;
+    color: $rgba-primary-3;
+    outline: none;
+}
+
+// JavaScript-created selectors
+
+.b-html__vh110 {
+    height: 110vh;
+}
+
+.b-html__vh120 {
+    height: 120vh;
+}
+
+.b-html__vh140 {
+    height: 140vh;
+}
+
+p {
+    flex: 1;
+    font-size: $base-font-size;
+    padding: 0.5rem;
+    border: none;
+    color: $rgba-primary-1;
+}
+
+.b-weight__input.alert,
+.b-height__input.alert {
+    background-color: $rgba-primary-2;
+}
+
+// @media queries --desktop first this time--
+
+@media only screen 
+    and (max-width: 600px) {
+        
+        .b-title {
+            font-size: 2 * $base-font-size;
+            margin-top: 2 * $base-font-size;
+            margin-bottom: $base-font-size;
+        }
+
+        .b-form {
+            font-size: $base-font-size;
+            padding: 1rem;
+            max-width: 65%;
+        }
+    }
+
+@media only screen 
+    and (max-height: 450px) {
+
+        .b-html__vh140 {
+            height: auto;
+        }
+
+        .b-title {
+            font-size: 2 * $base-font-size;
+            margin-top: 2 * $base-font-size;
+            margin-bottom: $base-font-size;
+        }
+
+        .b-form {
+            font-size: $base-font-size;
+            padding: 1rem;
+        }
+    }

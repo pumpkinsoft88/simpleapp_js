@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>간단계산기</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="/01_calculator/assets/calc_style.css">
+    </head>
+
+<script src="/01_calculator/code.js" defer></script>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/main.html">심플앱스</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0 mt-3">
+                    <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" href="/main.html">홈</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/01_calculator/index.html">간단계산기</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/02_loancalc/index.html">대출이자계산기</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/03_todo/index.html">TODO리스트</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/04_bmicalc/index.html">BMI계산기</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<body>
+    
+    <div class="container mt-5" id="calculator">
+        <h1>간단계산기</h1>
+        <p id="last_operation_history"></p>
+        <p id="box" class="box">0</p>
+        <table id="table">
+            <tr>
+                <td><button onclick="calculate_percentage()">%</button></td>
+                <td><button onclick="clear_entry()">CE</button></td>
+                <td><button onclick="button_clear()">C</button></td>
+                <td><button id="backspace_btn" onclick="backspace_remove()"></button></td>
+            </tr>
+            <tr>
+                <td><button onclick="division_one()">¹∕ₓ</button></td>
+                <td><button onclick="power_of()">𝑥²</button></td>
+                <td><button onclick="square_root()">√𝑥</button></td>
+                <td><button id="plusOp" value="+" class="operator" onclick="button_number('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="button_number(7)">7</button></td>
+                <td><button onclick="button_number(8)">8</button></td>
+                <td><button onclick="button_number(9)">9</button></td>
+                <td><button id="subOp" value="-" class="operator" onclick="button_number('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="button_number(4)">4</button></td>
+                <td><button onclick="button_number(5)">5</button></td>
+                <td><button onclick="button_number(6)">6</button></td>
+                <td><button id="multiOp" value="*" class="operator" onclick="button_number('*')">×</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="button_number(1)">1</button></td>
+                <td><button onclick="button_number(2)">2</button></td>
+                <td><button onclick="button_number(3)">3</button></td>            
+                <td><button id="divOp" value="/" class="operator" onclick="button_number('/')">÷</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="plus_minus()">±</button></td>
+                <td><button onclick="button_number(0)">0</button></td>
+                <td><button id="dot" value="." onclick="button_number('.')">.</button></td>
+                <td colspan="4"><button value="=" class="operator" id="equal_sign" onclick="button_number('=')">=</button></td>
+            </tr>
+        </table>
+    </div>    
+
+</body>
+</html>
